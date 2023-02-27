@@ -1,0 +1,12 @@
+{
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.analysis.autoImportCompletions": false,
+    "pyright.completion.snippetSupport": false,
+    "pyright.organizeimports.provider": "isort",
+    "pyright.disableProgressNotifications": true,
+    "python.analysis.typeCheckingMode": "off",
+    "signature.enable": false,
+    "diagnostic.hintSign": "",
+    "diagnostic.messageTarget": "echo"
+}
