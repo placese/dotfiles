@@ -47,6 +47,7 @@ let g:transparent_enabled = v:true
 
 set cursorline
 set ruler
+set number
 set relativenumber
 set mouse=a
 set encoding=utf-8
