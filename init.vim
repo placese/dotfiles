@@ -39,6 +39,10 @@ nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 nmap <leader>gi <Plug>(coc-implementation)
 nmap <leader>gy <Plug>(coc-type-definition)
+inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<Tab>"
+
+
+set completeopt=longest,menuone
 
 " ui options
 lua require'onedarkcolors'
