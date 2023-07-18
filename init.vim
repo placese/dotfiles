@@ -28,6 +28,8 @@ call plug#end()
 lua require'tree-sitter'
 
 nnoremap <c-P> <cmd>lua require('fzf-lua').files()<CR>
+nnoremap <c-g> <cmd>lua require('fzf-lua').grep()<CR>
+xnoremap <c-s> <cmd>lua require('fzf-lua').grep_visual()<CR>
 
 let mapleader = ","
 
@@ -64,6 +66,7 @@ set softtabstop=4
 set shiftwidth=4        " number of spaces to use for auto indent
 set autoindent          " copy indent from current line when starting a new line
 set backspace=indent,eol,start
+set ignorecase
 
 nnoremap <leader><space> :nohlsearch <CR>
 
@@ -74,6 +77,10 @@ nnoremap td :tabnew %<CR>
 nnoremap tl :tabnext<CR>
 nnoremap th :tabprevious<CR>
 nnoremap ti :tabnew ~/.config/nvim/init.vim<CR>
+
+" copy
+noremap <C-S-c> "+y
+noremap <C-S-v> "+p
 
 filetype on
 filetype plugin on
