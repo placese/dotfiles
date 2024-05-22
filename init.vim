@@ -1,8 +1,5 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" :CocInstall coc-json
-
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -41,12 +38,39 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 
 Plug 'm4xshen/autoclose.nvim'
 
+Plug 'mfussenegger/nvim-dap'
+Plug 'nvim-neotest/nvim-nio'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'mfussenegger/nvim-dap-python'
+
+Plug 'folke/neodev.nvim'
+
 
 call plug#end()
 
-lua require("autoclose").setup()
+nnoremap <leader>md :MarkdownPreview<CR>
 
+lua require"debugging"
 
+" lua require('dap')
+" lua require('dapui').setup()
+" lua require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
+" lua require'_dap-settings'
+" nnoremap <leader>dc <Cmd>lua require'dap'.continue()<CR>
+" nnoremap <leader>dj <Cmd>lua require'dap'.step_over()<CR>
+" nnoremap <leader>dl <Cmd>lua require'dap'.step_into()<CR>
+" nnoremap <leader>dJ <Cmd>lua require'dap'.step_out()<CR>
+" nnoremap <Leader>db <Cmd>lua require'dap'.toggle_breakpoint()<CR>
+" nnoremap <Leader>dB <Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
+" nnoremap <Leader>dlp <Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
+" nnoremap <Leader>dr <Cmd>lua require'dap'.repl.open()<CR>
+" nnoremap <Leader>dl <Cmd>lua require'dap'.run_last()<CR>
+"
+" nnoremap <leader>dn <Cmd>lua require('dap-python').test_method()<CR>
+" nnoremap <leader>df <Cmd>lua require('dap-python').test_class()<CR>
+" vnoremap <leader>ds <ESC>:lua require('dap-python').debug_selection()<CR>
+
+lua require("autoclose").setup({options = {disable_when_touch=true, touch_regex="[%w(%[{\'\"]"}})
 lua require'lsp'
 
 let g:better_whitespace_ctermcolor='20B2AA'
@@ -72,19 +96,6 @@ set updatetime=300
 set inccommand=nosplit
 
 set colorcolumn=100
-
-" nmap <leader>gd <Plug>(coc-definition)
-" nmap <leader>gr <Plug>(coc-references)
-" nmap <leader>gi <Plug>(coc-implementation)
-" nmap <leader>gy <Plug>(coc-type-definition)
-" inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<Tab>"
-
-" inoremap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-" imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-" smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-" imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-" smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-
 
 
 lua require'nvim-tree-settings'
@@ -112,6 +123,8 @@ set shiftwidth=4        " number of spaces to use for auto indent
 set autoindent          " copy indent from current line when starting a new line
 set backspace=indent,eol,start
 set ignorecase
+
+hi Search guibg=plum guifg=cornsilk
 
 nnoremap <leader><space> :nohlsearch <CR>
 

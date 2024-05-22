@@ -1,5 +1,5 @@
 require('onedark').setup {
-  style = 'warmer',
+  style = 'dark',
   colors = {
     bright_orange = '#ff8800',
     amethyst = '#9966cc',
