@@ -4,7 +4,9 @@ return {
   },
   {
     "junegunn/fzf",
-    build = "./install --bin"
+    dir = "~/.fzf",
+    build = "./install --bin",
+    name = "fzf"
   },
   {
     "ibhagwan/fzf-lua",
