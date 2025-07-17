@@ -5,14 +5,6 @@ return {
       options = {
         theme = "onedark",
       },
-      sections = {
-        lualine_c = {
-          {
-            "filename",
-            path = 1,
-          },
-        },
-      },
     })
   end,
 }

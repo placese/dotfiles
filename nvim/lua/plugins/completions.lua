@@ -18,7 +18,9 @@ return {
       cmp.setup({
         snippet = {
           expand = function(args)
-            require("luasnip").lsp_expand(args.body)
+            local ls = require("luasnip")
+            ls.lsp_expand(args.body)
+            ls.add_snippets("all", {ls.snippet("log", ls.insert_node("__import__('logging').getLogger('__name__').info()"))})
           end,
         },
         window = {

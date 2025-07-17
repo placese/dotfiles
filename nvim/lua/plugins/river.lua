@@ -1,1 +1,0 @@
-return {"rfratto/vim-river"}

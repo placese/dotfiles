@@ -14,7 +14,7 @@ vim.cmd("set inccommand=nosplit")
 
 vim.cmd("let g:transparent_enabled = v:true")
 
-vim.cmd("set colorcolumn=100")
+vim.cmd("set colorcolumn=120")
 vim.cmd("set cursorline")
 vim.cmd("set ruler")
 vim.cmd("set number")

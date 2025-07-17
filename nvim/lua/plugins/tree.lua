@@ -22,7 +22,6 @@ return {
       })
       local api = require "nvim-tree.api"
       vim.keymap.set("n", "<leader>m", api.tree.toggle, {})
-      vim.keymap.set("n", "<leader>n", api.tree.change_root_to_parent, {})
     end
   },
 }
